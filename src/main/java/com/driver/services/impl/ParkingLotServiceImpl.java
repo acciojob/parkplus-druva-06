@@ -39,7 +39,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
         ParkingLot parkingLot = parkingLotRepository1.findById(parkingLotId).get();
         spot.setParkingLot(parkingLot);
         parkingLot.getSpotList().add(spot);
-        SpotDetailResponseDto spotDetailResponseDto = new SpotDetailResponseDto(spot.getSpotType(),spot.getPricePerHour(),spot.isOccupied());
+        SpotDetailResponseDto spotDetailResponseDto = new SpotDetailResponseDto(spot.getSpotType(),spot.getPricePerHour(),spot.getOccupied());
         parkingLotRepository1.save(parkingLot);
         return spotDetailResponseDto;
     }
@@ -55,7 +55,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
         Spot spot = spotRepository1.findByIdAndParkingLotId(spotId,parkingLotId);
         spot.setPricePerHour(pricePerHour);
         spotRepository1.save(spot);
-        return new SpotDetailResponseDto(spot.getSpotType(),spot.getPricePerHour(),spot.isOccupied());
+        return new SpotDetailResponseDto(spot.getSpotType(),spot.getPricePerHour(),spot.getOccupied());
     }
 
     @Override
