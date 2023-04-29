@@ -49,6 +49,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
         spotRepository1.deleteById(spotId);
     }
 
+
 //    @Override
 //    public Spot updateSpot(int parkingLotId, int spotId, int pricePerHour) {
 //
