@@ -44,7 +44,7 @@ public class ParkingLot {
         this.address = address;
     }
 
-    public List<Spot> getSpots() {
+    public List<Spot> getSpotList() {
         return spotList;
     }
 
