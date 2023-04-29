@@ -64,7 +64,8 @@ public class ReservationServiceImpl implements ReservationService {
                 }
             }
             if(minSpot == null) throw new Exception("Cannot make reservation");
-            reservation = new Reservation(timeInHours);
+            reservation = new Reservation();
+            reservation.setNumberOfHours(timeInHours);
             user.getReservationList().add(reservation);
             minSpot.getReservationList().add(reservation);
             reservation.setUser(user);
