@@ -9,11 +9,11 @@ public interface ParkingLotService {
     
     void deleteSpot(int spotId);
 
-    SpotDetailResponseDto updateSpot(int parkingLotId, int spotId, int pricePerHour);
+    Spot updateSpot(int parkingLotId, int spotId, int pricePerHour);
 
     void deleteParkingLot(int parkingLotId);
 
-    ParkingLotDetailResponseDto addParkingLot(String name, String address);
+    ParkingLot addParkingLot(String name, String address);
 
-    SpotDetailResponseDto addSpot(int parkingLotId, Integer numberOfWheels, Integer pricePerHour);
+    Spot addSpot(int parkingLotId, Integer numberOfWheels, Integer pricePerHour);
 }

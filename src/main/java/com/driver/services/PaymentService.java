@@ -1,7 +1,8 @@
 package com.driver.services;
 
 import com.driver.DTO.responseDto.PaymentDetailResponseDto;
+import com.driver.model.Payment;
 
 public interface PaymentService {
-    PaymentDetailResponseDto pay(Integer reservationId, int amountSent, String mode) throws Exception;
+    Payment pay(Integer reservationId, int amountSent, String mode) throws Exception;
 }

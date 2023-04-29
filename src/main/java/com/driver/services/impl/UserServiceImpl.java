@@ -20,11 +20,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UpdateUserPasswordResponseDto updatePassword(Integer userId, String password) {
+    public User updatePassword(Integer userId, String password) {
         User user = userRepository4.findById(userId).get();
         user.setPassword(password);
         userRepository4.save(user);
-        return new UpdateUserPasswordResponseDto(userId,user.getName(),user.getPassword());
+        return user;
     }
 
     @Override

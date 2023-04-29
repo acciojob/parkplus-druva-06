@@ -18,7 +18,7 @@ public class PaymentServiceImpl implements PaymentService {
     PaymentRepository paymentRepository2;
 
     @Override
-    public PaymentDetailResponseDto pay(Integer reservationId, int amountSent, String mode) throws Exception {
+    public Payment pay(Integer reservationId, int amountSent, String mode) throws Exception {
         Payment payment = null;
         Reservation reservation = reservationRepository2.findById(reservationId).get();
         int numOfHours = reservation.getNumberOfHours();
@@ -41,6 +41,6 @@ public class PaymentServiceImpl implements PaymentService {
         reservation.getSpot().setOccupied(true);
         payment.setReservation(reservation);
         paymentRepository2.save(payment);
-        return new PaymentDetailResponseDto(reservationId,true);
+        return payment;
     }
 }

@@ -22,14 +22,14 @@ public class ParkingLotServiceImpl implements ParkingLotService {
     @Autowired
     SpotRepository spotRepository1;
     @Override
-    public ParkingLotDetailResponseDto addParkingLot(String name, String address) {
+    public ParkingLot addParkingLot(String name, String address) {
         ParkingLot parkingLot = new ParkingLot(name,address);
         parkingLotRepository1.save(parkingLot);
-        return new ParkingLotDetailResponseDto(parkingLot.getName(),parkingLot.getAddress());
+        return parkingLot;
     }
 
     @Override
-    public SpotDetailResponseDto addSpot(int parkingLotId, Integer numberOfWheels, Integer pricePerHour) {
+    public Spot addSpot(int parkingLotId, Integer numberOfWheels, Integer pricePerHour) {
         SpotType spotType = SpotType.OTHERS;
         if(numberOfWheels == 2)
             spotType = SpotType.TWO_WHEELER;
@@ -39,9 +39,8 @@ public class ParkingLotServiceImpl implements ParkingLotService {
         ParkingLot parkingLot = parkingLotRepository1.findById(parkingLotId).get();
         spot.setParkingLot(parkingLot);
         parkingLot.getSpotList().add(spot);
-        SpotDetailResponseDto spotDetailResponseDto = new SpotDetailResponseDto(spot.getSpotType(),spot.getPricePerHour(),spot.getOccupied());
         parkingLotRepository1.save(parkingLot);
-        return spotDetailResponseDto;
+        return spot;
     }
 
     @Override
@@ -51,11 +50,11 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 
 
     @Override
-    public SpotDetailResponseDto updateSpot(int parkingLotId, int spotId, int pricePerHour) {
+    public Spot updateSpot(int parkingLotId, int spotId, int pricePerHour) {
         Spot spot = spotRepository1.findByIdAndParkingLotId(spotId,parkingLotId);
         spot.setPricePerHour(pricePerHour);
         spotRepository1.save(spot);
-        return new SpotDetailResponseDto(spot.getSpotType(),spot.getPricePerHour(),spot.getOccupied());
+        return spot;
     }
 
     @Override
