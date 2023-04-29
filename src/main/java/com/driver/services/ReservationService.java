@@ -1,5 +1,7 @@
 package com.driver.services;
 
+import com.driver.DTO.responseDto.ReservationDetailResponseDto;
+
 public interface ReservationService {
-//    Reservation reserveSpot(Integer userId, Integer parkingLotId, Integer timeInHours, Integer numberOfWheels) throws Exception;
+    ReservationDetailResponseDto reserveSpot(Integer userId, Integer parkingLotId, Integer timeInHours, Integer numberOfWheels) throws Exception;
 }

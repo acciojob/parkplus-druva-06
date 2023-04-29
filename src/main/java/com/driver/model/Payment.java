@@ -8,13 +8,13 @@ public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int paymentCompleted;
+    private boolean paymentCompleted;
     @Enumerated(EnumType.STRING)
     private PaymentMode paymentMode;
 
     Payment(){}
 
-    public Payment(int paymentCompleted, PaymentMode paymentMode) {
+    public Payment(boolean paymentCompleted, PaymentMode paymentMode) {
         this.paymentCompleted = paymentCompleted;
         this.paymentMode = paymentMode;
     }
@@ -27,11 +27,11 @@ public class Payment {
         this.id = id;
     }
 
-    public int getPaymentCompleted() {
+    public boolean getPaymentCompleted() {
         return paymentCompleted;
     }
 
-    public void setPaymentCompleted(int paymentCompleted) {
+    public void setPaymentCompleted(boolean paymentCompleted) {
         this.paymentCompleted = paymentCompleted;
     }
 
@@ -42,6 +42,15 @@ public class Payment {
     public void setPaymentMode(PaymentMode paymentMode) {
         this.paymentMode = paymentMode;
     }
+
+    public Reservation getReservation() {
+        return reservation;
+    }
+
+    public void setReservation(Reservation reservation) {
+        this.reservation = reservation;
+    }
+
     @OneToOne
     @JoinColumn
     private Reservation reservation;

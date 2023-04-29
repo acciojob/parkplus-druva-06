@@ -10,13 +10,11 @@ public class SpotDetailResponseDto {
     private SpotType spotType;
     private int pricePerHour;
     private boolean occupied;
-    private List<Reservation> reservationList;
     public SpotDetailResponseDto(){}
-    public SpotDetailResponseDto(SpotType spotType, int pricePerHour, boolean occupied, List<Reservation> reservationList) {
+    public SpotDetailResponseDto(SpotType spotType, int pricePerHour, boolean occupied) {
         this.spotType = spotType;
         this.pricePerHour = pricePerHour;
         this.occupied = occupied;
-        this.reservationList = reservationList;
     }
     public SpotType getSpotType() {
         return spotType;
@@ -42,11 +40,4 @@ public class SpotDetailResponseDto {
         this.occupied = occupied;
     }
 
-    public List<Reservation> getReservationList() {
-        return reservationList;
-    }
-
-    public void setReservationList(List<Reservation> reservationList) {
-        this.reservationList = reservationList;
-    }
 }
