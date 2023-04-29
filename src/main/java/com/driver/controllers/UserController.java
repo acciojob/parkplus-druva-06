@@ -10,17 +10,17 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     @Autowired
     UserServiceImpl userService;
-    @PostMapping("/register")
-    public ResponseEntity<Void> registerUser(@RequestParam String name, @RequestParam String phoneNumber, @RequestParam String password){
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
-
-    @PutMapping("/update")
-    public ResponseEntity<User> updatePassword(@RequestParam Integer userId, @RequestParam String password){
-        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
-    }
-
-    @DeleteMapping("/delete")
-    public void deleteUser(@RequestParam Integer userId){
-    }
+//    @PostMapping("/register")
+//    public ResponseEntity<Void> registerUser(@RequestParam String name, @RequestParam String phoneNumber, @RequestParam String password){
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
+//
+//    @PutMapping("/update")
+//    public ResponseEntity<User> updatePassword(@RequestParam Integer userId, @RequestParam String password){
+//        return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+//    }
+//
+//    @DeleteMapping("/delete")
+//    public void deleteUser(@RequestParam Integer userId){
+//    }
 }

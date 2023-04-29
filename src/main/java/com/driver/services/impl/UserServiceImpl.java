@@ -12,18 +12,18 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     UserRepository userRepository4;
-    @Override
-    public void deleteUser(Integer userId) {
-
-    }
-
-    @Override
-    public User updatePassword(Integer userId, String password) {
-
-    }
-
-    @Override
-    public void register(String name, String phoneNumber, String password) {
-
-    }
+//    @Override
+//    public void deleteUser(Integer userId) {
+//
+//    }
+//
+//    @Override
+//    public User updatePassword(Integer userId, String password) {
+//
+//    }
+//
+//    @Override
+//    public void register(String name, String phoneNumber, String password) {
+//
+//    }
 }
